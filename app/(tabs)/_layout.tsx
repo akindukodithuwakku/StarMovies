@@ -20,7 +20,7 @@ const Icons = ({focused, title, icon}) => { // reusable custom component
                 overflow: 'hidden',
                 borderRadius: 9999,
                 minWidth: 112,
-                minHeight: 56,
+                minHeight: 60,
             }}
             >
             <Image
@@ -32,16 +32,48 @@ const Icons = ({focused, title, icon}) => { // reusable custom component
         );
     }
     return (
-        <Image
-        source={icon}
-        style={{ tintColor: '#151312', width: 20, height: 20 }}
-        />
+      <View style={{ justifyContent: 'center', alignItems: 'center', paddingVertical: 8 }}>
+      <Image source={icon} style={{ tintColor: '#A1A1A1', width: 22, height: 22 }} />
+    </View>
+
   );
 };
 
 const _layout = () => {
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        tabBarShowLabel: false,
+        tabBarItemStyle: {
+          width: 'auto',
+          height: 70,
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
+
+        tabBarStyle: {
+          backgroundColor: '#0f0D23',
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          elevation: 0,
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          borderColor: '#0f0D23',
+          overflow: 'hidden',
+          height: 70,
+          paddingVertical: 8,
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 0,
+            height: 0,
+          },
+          shadowOpacity: 0.1,
+          shadowRadius: 20,
+        },
+        
+        }} >
       <Tabs.Screen
         name="profile"
         options={{
