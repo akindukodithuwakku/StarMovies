@@ -67,4 +67,16 @@ out/
 # Example files
 app-example
 
+# Environment variables
 .env
+.env.*
+!.env.example
+
+# API Keys and Secrets
+**/config/keys.ts
+**/constants/config.ts
+**/services/config.ts
+
+# React Native
+ios/
+android/
