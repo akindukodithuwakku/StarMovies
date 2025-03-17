@@ -11,3 +11,30 @@
 //   .then(res => res.json())
 //   .then(json => console.log(json))
 //   .catch(err => console.error(err));
+
+import { TMDB_CONFIG } from './config';
+
+// this function will fetch popular movies from the TMDB API
+// and return the results
+export const fetchMovies = async({query}: {query: string}) => {
+    try {
+        const endpoint = query ? 
+            `${TMDB_CONFIG.Base_URL}/search/movie?query=${encodeURIComponent(query)}` :
+            `${TMDB_CONFIG.Base_URL}/discover/movie?sort_by=popularity.desc`;
+        
+        const response = await fetch(endpoint, {
+            method: 'GET',
+            headers: TMDB_CONFIG.headers
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch movies: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error('Error fetching movies:', error);
+        throw error;
+    }
+};  

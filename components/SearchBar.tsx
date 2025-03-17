@@ -4,7 +4,7 @@ import { icons } from '@/constants/icons';
 
 interface SearchBarProps {
     placeholder: string;
-    onPress: () => void;
+    onPress: (text: string) => void;
 }
 
 const SearchBar = ({ placeholder, onPress }: SearchBarProps) => {
@@ -16,7 +16,6 @@ const SearchBar = ({ placeholder, onPress }: SearchBarProps) => {
                 resizeMode="contain"
             />
             <TextInput
-                onPress={onPress}
                 placeholder={placeholder}
                 placeholderTextColor="#a8b5db"
                 onChangeText={onPress}

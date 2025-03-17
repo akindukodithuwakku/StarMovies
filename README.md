@@ -2,18 +2,25 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+## Environment Setup
 
-1. Install dependencies
+1. Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
 
+2. Update `.env` with your TMDB API credentials:
+   - Get your API key from [TMDB API](https://www.themoviedb.org/settings/api)
+   - Add your API key and access token to the `.env` file
+
+3. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+4. Start the development server:
    ```bash
-    npx expo start
+   npm start
    ```
 
 In the output, you'll find options to open the app in a
