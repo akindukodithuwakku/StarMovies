@@ -19,8 +19,8 @@ import { TMDB_CONFIG } from './config';
 export const fetchMovies = async({query}: {query: string}) => {
     try {
         const endpoint = query ? 
-            `${TMDB_CONFIG.Base_URL}/search/movie?query=${encodeURIComponent(query)}` :
-            `${TMDB_CONFIG.Base_URL}/discover/movie?sort_by=popularity.desc`;
+            `${TMDB_CONFIG.Base_URL}/search/movie?api_key=${process.env.EXPO_PUBLIC_TMDB_API_KEY}&query=${encodeURIComponent(query)}` :
+            `${TMDB_CONFIG.Base_URL}/discover/movie?api_key=${process.env.EXPO_PUBLIC_TMDB_API_KEY}&sort_by=popularity.desc`;
         
         const response = await fetch(endpoint, {
             method: 'GET',

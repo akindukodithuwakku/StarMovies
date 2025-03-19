@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useFetch = (fetchFunction: () => Promise<any>) => {
+const useFetch = (fetchFunction: () => Promise<any>, p0: boolean) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

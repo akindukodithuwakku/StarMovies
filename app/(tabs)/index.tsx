@@ -16,11 +16,13 @@ export default function Index() {
   const {data: movies, 
     loading: moviesLoading, 
     error: moviesError }: { data: any, loading: boolean, error: any } = useFetch(() => fetchMovies({
-    query: ''
+    query: 'iron man'
   }));
 
   console.log('Movies:', movies);
   console.log('Error:', moviesError);
+  console.log('API Key:', process.env.EXPO_PUBLIC_TMDB_API_KEY);
+  console.log('Access Token:', process.env.EXPO_PUBLIC_TMDB_ACCESS_TOKEN);
 
   return (
     <View className="flex-1 bg-primary">
