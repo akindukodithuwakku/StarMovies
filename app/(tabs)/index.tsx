@@ -1,13 +1,13 @@
-import { icons } from "@/constants/icons";
-import { images } from "@/constants/images";
-import { Link } from "expo-router";
 import { Text, View, Image, ScrollView, ActivityIndicator, FlatList } from "react-native";
+import { Link } from "expo-router";
 import SearchBar from "@/components/SearchBar";
 import { useRouter } from "expo-router";
 import useFetch from "@/services/useFetch";
 import { fetchMovies } from "@/services/api";
 import MovieCard from "@/components/MovieCard";
 import React, { Fragment } from 'react';
+import {images} from '@/constants/images'
+import { icons } from '@/constants/icons';
 
 export default function Index() {
 
@@ -16,13 +16,11 @@ export default function Index() {
   const {data: movies, 
     loading: moviesLoading, 
     error: moviesError }: { data: any, loading: boolean, error: any } = useFetch(() => fetchMovies({
-    query: 'iron man'
+    query: 'Bat'
   }));
 
   console.log('Movies:', movies);
   console.log('Error:', moviesError);
-  console.log('API Key:', process.env.EXPO_PUBLIC_TMDB_API_KEY);
-  console.log('Access Token:', process.env.EXPO_PUBLIC_TMDB_ACCESS_TOKEN);
 
   return (
     <View className="flex-1 bg-primary">
